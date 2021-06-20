@@ -1,0 +1,5 @@
+Q-19. Write an SQL query to determine the 5th highest salary without using TOP or limit
+method.
+Ans. select * from( select ename, sal, dense_rank() over(order by sal desc)r from Employee) where r=&5;
+Q-20. Write an SQL query to fetch the list of employees with the same salary.
+Ans. SELECT s1.Name, s1.Salary FROM Employees s1 INNER JOIN Staff s2 ON s1.Salary = s2.Salary AND s1.Name <> s2.Name;
